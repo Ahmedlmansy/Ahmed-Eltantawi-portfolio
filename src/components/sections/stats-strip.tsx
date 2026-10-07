@@ -6,9 +6,9 @@ import { StaggerContainer, StaggerItem } from "@/components/motion/stagger-conta
 export function StatsStrip() {
   if (stats.length === 0) return null;
   return (
-    <section className="border-y border-hairline bg-elevated py-8">
+    <section className="w-full border-y border-hairline bg-elevated py-8">
       <Container>
-        <StaggerContainer className="grid grid-cols-2 gap-8 md:grid-cols-4">
+        <StaggerContainer className="grid grid-cols-2 gap-6 lg:grid-cols-4">
           {stats.map((s) => <StaggerItem key={s.label}><MetricCard {...s} /></StaggerItem>)}
         </StaggerContainer>
       </Container>

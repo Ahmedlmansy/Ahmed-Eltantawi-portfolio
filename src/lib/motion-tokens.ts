@@ -13,6 +13,7 @@ export const duration = {
   base: 0.45,      // عناصر UI عادية
   reveal: 0.7,     // reveal للأقسام والعناوين
   slow: 1.0,       // hero فقط
+  count: 1.2,      // A9: stats number count
 } as const;
 
 export const spring = {

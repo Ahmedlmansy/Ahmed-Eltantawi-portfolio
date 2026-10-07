@@ -47,8 +47,21 @@ export type Hero = {
   };
 };
 
-export type Stat = { value: string; label: string };
-export type SkillGroup = { title: string; items: string[] };
+export type Stat = { value: string; label: string; description: string };
+export type SkillIcon = "mobile" | "state" | "architecture" | "cloud" | "database" | "foundations";
+export type SkillGroup = {
+  title: string;
+  description: string;
+  icon: SkillIcon;
+  accent: "sage" | "blue" | "sand";
+  items: string[];
+};
+export type SkillSet = {
+  eyebrow: string;
+  heading: string;
+  description: string;
+  groups: SkillGroup[];
+};
 
 export type ExperienceItem = {
   role: string;
