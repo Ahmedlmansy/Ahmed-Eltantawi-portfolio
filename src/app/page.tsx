@@ -4,6 +4,7 @@ import { PageTransition } from "@/components/layout/page-transition";
 import { Hero } from "@/components/sections/hero";
 import { StatsStrip } from "@/components/sections/stats-strip";
 import { Skills } from "@/components/sections/skills";
+import { BehindCode } from "@/components/sections/behind-code";
 import { Experience } from "@/components/sections/experience";
 import { AppLab } from "@/components/sections/app-lab";
 import { FeaturedProjects } from "@/components/sections/featured-projects";
@@ -16,6 +17,7 @@ export default function HomePage() {
       <PageTransition>
         <Hero />
         <StatsStrip />
+        <BehindCode />
         <Skills />
         <Experience />
         <AppLab />

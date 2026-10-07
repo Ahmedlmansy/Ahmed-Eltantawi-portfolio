@@ -63,11 +63,29 @@ export type SkillSet = {
   groups: SkillGroup[];
 };
 
+export type CodeTone = "keyword" | "type" | "member" | "comment" | "plain";
+export type CodeFragment = { text: string; tone: CodeTone };
+export type CodeLine = { indent: number; fragments: CodeFragment[] };
+export type BehindCode = {
+  eyebrow: string;
+  heading: string;
+  paragraphs: string[];
+  snippet: {
+    fileName: string;
+    language: string;
+    note: string;
+    lines: CodeLine[];
+  };
+  philosophy: { heading: string; text: string };
+  focusAreas: { value: string; label: string }[];
+};
+
 export type ExperienceItem = {
   role: string;
   company: string;
   period: string;
-  description?: string;
+  companyUrl?: string;
+  description: string;
   tags?: string[];
 };
 
