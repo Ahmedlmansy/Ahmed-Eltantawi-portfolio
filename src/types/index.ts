@@ -100,7 +100,23 @@ export type Project = {
   links?: { live?: string; github?: string; store?: string };
 };
 
-export type AppLab = { heading?: string; description?: string; cta?: Link; apps?: ShowcaseApp[] };
+export type AppLabFeature = { label: string; detail: string };
+export type AppLabEntry = {
+  id: string;
+  name: string;
+  previewTitle: string;
+  previewLabel: string;
+  description: string;
+  features: AppLabFeature[];
+};
+export type AppLab = {
+  eyebrow: string;
+  heading: string;
+  description: string;
+  stageLabel: string;
+  viewportLabel: string;
+  apps: AppLabEntry[];
+};
 
 export type ShowcaseScreen = { label: string; image: string };
 export type ShowcaseApp = {
