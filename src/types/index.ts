@@ -7,16 +7,44 @@ export type Site = {
   description?: string;
   url?: string;
   email?: string;
+  phone?: string;
+  location?: string;
+  status?: string;
+  cvUrl?: string;
+  github?: string;
+  linkedin?: string;
+  whatsapp?: string;
   ogImage?: string;
 };
 
 export type Hero = {
   eyebrow?: string;
   headline?: string;
+  headlineAccent?: string;
   subheadline?: string;
+  description?: string;
+  highlightedTerms?: string[];
+  availability?: string;
   primaryCta?: Link;
   secondaryCta?: Link;
+  tertiaryCta?: Link;
   avatar?: string;
+  location?: string;
+  remoteWork?: string;
+  preview?: {
+    accountLabel: string;
+    accountName: string;
+    balanceLabel: string;
+    category: string;
+    balance: string;
+    change: string;
+    chartLabel: string;
+    chartMetric: string;
+    actions: { label: string; icon: string }[];
+    navigation: string[];
+    frameRate: string;
+    architecture: string;
+  };
 };
 
 export type Stat = { value: string; label: string };
