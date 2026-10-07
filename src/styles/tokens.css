@@ -1,0 +1,60 @@
+/* Serene Craft palette (from DESIGN.md). Values are RGB channels so Tailwind alpha modifiers work. */
+:root {
+  /* Surfaces */
+  --canvas: 250 250 248;          /* #FAFAF8 */
+  --section: 245 246 243;         /* #F5F6F3 */
+  --elevated: 255 255 255;        /* #FFFFFF */
+
+  /* Text */
+  --text-primary: 38 50 56;       /* #263238 */
+  --text-secondary: 102 112 107;  /* #66706B */
+  --text-muted: 138 147 142;      /* #8A938E */
+
+  /* Sage (primary) */
+  --sage-dark: 102 130 114;       /* #668272 */
+  --sage-hover: 82 109 93;        /* #526D5D */
+  --sage: 143 175 154;            /* #8FAF9A */
+  --sage-light: 220 231 223;      /* #DCE7DF */
+  --sage-soft: 238 244 239;       /* #EEF4EF */
+
+  /* Dusty blue (secondary) */
+  --blue-dark: 113 140 147;       /* #718C93 */
+  --blue: 169 193 199;            /* #A9C1C7 */
+  --blue-light: 231 239 241;      /* #E7EFF1 */
+
+  /* Sand accent */
+  --sand: 216 203 184;            /* #D8CBB8 */
+  --sand-light: 241 236 229;      /* #F1ECE5 */
+
+  /* Borders */
+  --border-hairline: 231 235 232; /* #E7EBE8 */
+  --border-container: 229 234 230;/* #E5EAE6 */
+  --border-inset: 221 227 223;    /* #DDE3DF */
+  --border-ghost: 213 221 216;    /* #D5DDD8 */
+
+  /* shadcn semantic mapping */
+  --background: var(--canvas);
+  --foreground: var(--text-primary);
+  --card: var(--elevated);
+  --card-foreground: var(--text-primary);
+  --popover: var(--elevated);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--sage-dark);
+  --primary-foreground: 255 255 255;
+  --secondary: var(--section);
+  --secondary-foreground: 82 97 90; /* #52615A */
+  --muted: var(--section);
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--sage-soft);
+  --accent-foreground: var(--text-primary);
+  --destructive: 186 26 26;
+  --destructive-foreground: 255 255 255;
+  --border: var(--border-container);
+  --input: var(--border-inset);
+  --ring: var(--sage-dark);
+
+  --radius: 1rem;
+
+  --shadow-rest: 0 1px 3px rgba(38, 50, 56, 0.03), 0 6px 16px rgba(38, 50, 56, 0.02);
+  --shadow-hover: 0 2px 8px rgba(38, 50, 56, 0.04), 0 16px 32px rgba(38, 50, 56, 0.04);
+}

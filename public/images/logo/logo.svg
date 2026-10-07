@@ -1,0 +1,43 @@
+<svg width="650" height="256" viewBox="0 0 650 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      /* استيراد خط DM Sans و Manrope */
+      @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&amp;family=Manrope:wght@400;600&amp;display=swap');
+
+      .name {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 48px; /* تم تعديل الحجم ليناسب الاسم الطويل */
+        font-weight: 700;
+        fill: #263238; /* Deep slate graphite */
+        letter-spacing: -0.02em;
+      }
+
+      .title {
+        font-family: 'Manrope', sans-serif;
+        font-size: 24px;
+        font-weight: 400;
+        fill: #66706B; /* Secondary Text / Botanical slate */
+        letter-spacing: 0.02em;
+      }
+    </style>
+  </defs>
+
+  <!-- خلفية التصميم الدافئة (Canvas Base) -->
+  <rect width="650" height="256" rx="24" fill="#FAFAF8"/>
+
+  <!-- أيقونة فلاتر بألوان Serene Craft -->
+  <g transform="translate(40, 20)">
+    <!-- الجناح العلوي (أخضر داكن) -->
+    <path d="M148 63 L53 158 L88 193 L183 98 Z" fill="#476253"/>
+
+    <!-- مثلث الظل (أخضر مريمية متوسط) -->
+    <path d="M123 158 L158 193 L88 193 Z" fill="#5f7b6b"/>
+
+    <!-- الجناح السفلي (أخضر فاتح) -->
+    <path d="M123 158 L203 158 L168 193 L158 193 Z" fill="#b0cdbb"/>
+  </g>
+
+  <!-- النصوص المدمجة -->
+  <text x="250" y="135" class="name">Ahmed Eltantawi</text>
+  <text x="255" y="175" class="title">Flutter Developer</text>
+</svg>
