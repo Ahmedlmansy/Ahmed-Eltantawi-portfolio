@@ -92,12 +92,12 @@ export type ExperienceItem = {
 export type Project = {
   id: string;
   title: string;
-  description?: string;
-  platforms?: string[];
-  stack?: string[];
-  image?: string;
-  award?: string;
-  links?: { live?: string; github?: string; store?: string };
+  category: string;
+  focus: string;
+  description: string;
+  stack: string[];
+  preview: "chat" | "dashboard" | "weather" | "commerce" | "news";
+  links: { github: string; releases: string };
 };
 
 export type AppLabFeature = { label: string; detail: string };
@@ -129,5 +129,22 @@ export type ShowcaseApp = {
 };
 export type Showcase = { heading?: string; description?: string; apps?: ShowcaseApp[] };
 
-export type Contact = { heading?: string; description?: string; email?: string; types?: string[] };
-export type Footer = { copyright?: string; note?: string };
+export type Contact = {
+  eyebrow: string;
+  heading: string;
+  description: string;
+  responseNote: string;
+  emailLabel: string;
+  whatsappLabel: string;
+  email: string;
+  emailHref: string;
+  whatsapp: string;
+  whatsappHref: string;
+  socialLinks: Link[];
+  engagementTypes: { value: string; label: string }[];
+};
+export type Footer = {
+  brandDescription: string;
+  rights: string;
+  buildNote: string;
+};
