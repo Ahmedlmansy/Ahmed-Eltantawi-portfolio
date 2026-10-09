@@ -15,7 +15,7 @@ const socialIcons: Record<string, LucideIcon> = {
 
 export function Footer() {
   return (
-    <footer className="mt-16 w-full border-t border-hairline bg-section">
+    <footer className="w-full border-t border-hairline bg-section">
       <Container className="flex max-w-7xl flex-col items-center justify-between gap-8 px-6 py-12 md:flex-row lg:px-12 lg:py-16">
         <div className="flex max-w-sm flex-col items-center gap-2 md:items-start">
           <Link
