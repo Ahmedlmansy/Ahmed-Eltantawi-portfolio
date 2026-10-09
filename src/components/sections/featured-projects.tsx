@@ -11,7 +11,7 @@ export function FeaturedProjects() {
   const secondPair = selectedProjects.slice(2, 4);
 
   return (
-    <section id="featured-projects" className="w-full py-24">
+    <section id="featured-projects" className="w-full py-24 bg-section">
       <Container className="max-w-7xl px-6 lg:px-12">
         <FadeIn className="mb-16 max-w-2xl">
           <p className="mb-2 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-primary">
@@ -21,8 +21,9 @@ export function FeaturedProjects() {
             Production Case Studies
           </h2>
           <p className="mt-2 text-base leading-relaxed text-ink-secondary">
-            Hand-crafted cross-platform applications featuring clean architecture layers, optimized
-            isolates, and delightful tactile feedback.
+            Hand-crafted cross-platform applications featuring clean
+            architecture layers, optimized isolates, and delightful tactile
+            feedback.
           </p>
         </FadeIn>
 

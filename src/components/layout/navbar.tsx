@@ -73,11 +73,19 @@ export function Navbar() {
         >
           <img
             src="/images/logo/logo.svg"
-            alt={`${site.name} — ${site.role}`}
+            alt=""
             className={`w-auto object-contain transition-all duration-300 group-hover:opacity-90 ${
               scrolled ? "h-10 md:h-10" : "h-10 md:h-11"
             }`}
           />
+          <span className="flex flex-col leading-tight">
+            <span className="text-[15px] font-bold tracking-tight text-ink sm:text-base">
+              Ahmed Eltantawi
+            </span>
+            <span className="text-[11px] font-semibold  tracking-[0.12em] text-primary sm:text-xs">
+              Flutter Developer
+            </span>
+          </span>
         </Link>
 
         {/* Desktop Navigation Links */}
@@ -142,7 +150,11 @@ export function Navbar() {
             onClick={() => setMobileOpen((prev) => !prev)}
             className="lg:hidden w-10 h-10 rounded-xl bg-bg-alt border border-border-subtle flex items-center justify-center text-text-primary hover:bg-primary-surface hover:text-primary transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
           >
-            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileOpen ? (
+              <X className="w-5 h-5" />
+            ) : (
+              <Menu className="w-5 h-5" />
+            )}
           </button>
         </div>
       </div>

@@ -1,61 +1,52 @@
 import { BadgeCheck } from "lucide-react";
 import behindCode from "@/data/behind-code";
+import hero from "@/data/hero";
 import { Container } from "@/components/shared/container";
 import { FadeIn } from "@/components/motion/fade-in";
-import { StaggerContainer, StaggerItem } from "@/components/motion/stagger-container";
+import {
+  StaggerContainer,
+  StaggerItem,
+} from "@/components/motion/stagger-container";
+import { HeroDevice } from "@/components/sections/hero-device";
 
-const codeToneClasses = {
-  keyword: "font-semibold text-primary",
-  type: "font-semibold text-dusty-dark",
-  member: "text-primary",
-  comment: "text-ink-muted",
-  plain: "text-ink",
+// نص الموبايل في القسم ده (غيّره زي ما تحب)
+const phoneText = {
+  accountLabel: "Behind the code",
+  accountName: "Clean Architecture",
+  balanceLabel: "Test coverage",
+  category: "Flutter",
+  balance: "92%",
+  change: "+4.2% this month",
+  chartLabel: "Build performance",
+  chartMetric: "60 FPS",
+  frameRate: "60 FPS",
+  architecture: "Clean Architecture",
 };
+const actionLabels = ["State", "Sync", "Secure"];
 
 export function BehindCode() {
+  const base = hero.preview;
+  const preview = base
+    ? {
+        ...base,
+        ...phoneText,
+        actions: base.actions.map((action, index) => ({
+          ...action,
+          label: actionLabels[index] ?? action.label,
+        })),
+      }
+    : null;
+
   return (
     <section id="behind-the-code" className="w-full py-24">
       <Container className="max-w-7xl px-6 lg:px-12">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
-          <FadeIn className="flex flex-col gap-4 lg:col-span-6">
-            <div className="overflow-hidden rounded-2xl border border-hairline bg-section p-6 text-ink shadow-xs">
-              <div className="flex items-center justify-between border-b border-hairline pb-3">
-                <div className="flex min-w-0 items-center gap-2">
-                  <span className="h-3 w-3 shrink-0 rounded-full bg-sand" aria-hidden="true" />
-                  <span className="h-3 w-3 shrink-0 rounded-full bg-border-divider" aria-hidden="true" />
-                  <span className="h-3 w-3 shrink-0 rounded-full bg-primary-light" aria-hidden="true" />
-                  <span className="ml-2 truncate font-mono text-xs font-medium text-ink-secondary">
-                    {behindCode.snippet.fileName}
-                  </span>
-                </div>
-                <span className="ml-3 shrink-0 font-mono text-[10px] font-semibold uppercase tracking-wider text-ink-muted">
-                  {behindCode.snippet.language}
-                </span>
+          <FadeIn className="flex flex-col gap-8 lg:col-span-6">
+            {preview && (
+              <div className="flex justify-center">
+                <HeroDevice preview={preview} />
               </div>
-              <pre
-                aria-label={`${behindCode.snippet.language} example`}
-                className="pt-3 font-mono text-[11px] leading-relaxed sm:text-[13px]"
-              >
-                <code>
-                  {behindCode.snippet.lines.map((line, index) => (
-                    <span key={index} className="block whitespace-pre-wrap break-words">
-                      {"  ".repeat(line.indent)}
-                      {line.fragments.map((fragment, fragmentIndex) => (
-                        <span
-                          key={`${index}-${fragmentIndex}`}
-                          className={codeToneClasses[fragment.tone]}
-                        >
-                          {fragment.text}
-                        </span>
-                      ))}
-                    </span>
-                  ))}
-                </code>
-              </pre>
-              <p className="mt-3 text-[10px] leading-relaxed text-ink-muted">
-                {behindCode.snippet.note}
-              </p>
-            </div>
+            )}
 
             <div className="flex items-start gap-4 rounded-2xl border border-primary-light bg-primary-surface p-6 shadow-xs">
               <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-primary-light bg-elevated text-primary">

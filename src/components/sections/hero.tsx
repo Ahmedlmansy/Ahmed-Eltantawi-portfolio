@@ -1,20 +1,16 @@
 import Link from "next/link";
-import {
-  ArrowDown,
-  ArrowRight,
-  FileText,
-  Globe2,
-  MapPin,
-} from "lucide-react";
+import { ArrowDown, ArrowRight, FileText, Globe2, MapPin } from "lucide-react";
 import hero from "@/data/hero";
-import { HeroDevice } from "@/components/sections/hero-device";
 import { Container } from "@/components/shared/container";
 import { Button } from "@/components/ui/button";
 import { RevealText } from "@/components/motion/reveal-text";
+import { HeroOrbit } from "./orbit-ring";
 
 function highlightTerms(text: string, terms: string[]) {
   if (terms.length === 0) return text;
-  const escapedTerms = terms.map((term) => term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  const escapedTerms = terms.map((term) =>
+    term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
+  );
   const parts = text.split(new RegExp(`(${escapedTerms.join("|")})`, "g"));
 
   return parts.map((part, index) =>
@@ -32,7 +28,6 @@ function highlightTerms(text: string, terms: string[]) {
 }
 
 export function Hero() {
-  const preview = hero.preview;
   const subheadline = hero.subheadline ?? "";
   const accentStart = hero.headlineAccent
     ? subheadline.indexOf(hero.headlineAccent)
@@ -46,7 +41,7 @@ export function Hero() {
     >
       <Container className="max-w-7xl px-6 lg:px-12">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
-          <div className="flex flex-col items-start lg:col-span-7">
+          <div className="flex flex-col items-start lg:col-span-6">
             {hero.availability && (
               <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-sage-light bg-sage-soft px-4 py-1.5 shadow-xs">
                 <span
@@ -97,7 +92,10 @@ export function Hero() {
                 >
                   <Link href={hero.primaryCta.href}>
                     {hero.primaryCta.label}
-                    <ArrowDown className="h-[18px] w-[18px]" aria-hidden="true" />
+                    <ArrowDown
+                      className="h-[18px] w-[18px]"
+                      aria-hidden="true"
+                    />
                   </Link>
                 </Button>
               )}
@@ -109,8 +107,14 @@ export function Hero() {
                   size="lg"
                   className="h-12 rounded-xl border-ghost bg-elevated px-6 text-[13px] text-text-nav shadow-xs"
                 >
-                  <a href={hero.secondaryCta.href} aria-label="Request a copy of the CV by email">
-                    <FileText className="h-[18px] w-[18px] text-primary" aria-hidden="true" />
+                  <a
+                    href={hero.secondaryCta.href}
+                    aria-label="Request a copy of the CV by email"
+                  >
+                    <FileText
+                      className="h-[18px] w-[18px] text-primary"
+                      aria-hidden="true"
+                    />
                     {hero.secondaryCta.label}
                   </a>
                 </Button>
@@ -134,29 +138,37 @@ export function Hero() {
             <div className="flex flex-wrap items-center gap-4 text-[13px] text-ink-muted">
               {hero.location && (
                 <div className="flex items-center gap-1.5">
-                  <MapPin className="h-[18px] w-[18px] text-primary" aria-hidden="true" />
+                  <MapPin
+                    className="h-[18px] w-[18px] text-primary"
+                    aria-hidden="true"
+                  />
                   <span>{hero.location}</span>
                 </div>
               )}
-              <span className="h-1 w-1 rounded-full bg-border-inset" aria-hidden="true" />
+              <span
+                className="h-1 w-1 rounded-full bg-border-inset"
+                aria-hidden="true"
+              />
               {hero.remoteWork && (
                 <div className="flex items-center gap-1.5">
-                  <Globe2 className="h-[18px] w-[18px] text-dusty-dark" aria-hidden="true" />
+                  <Globe2
+                    className="h-[18px] w-[18px] text-dusty-dark"
+                    aria-hidden="true"
+                  />
                   <span>{hero.remoteWork}</span>
                 </div>
               )}
             </div>
           </div>
 
-          {preview && (
-            <div className="relative flex items-center justify-center lg:col-span-5">
-              <div
-                className="pointer-events-none absolute -z-10 h-72 w-72 rounded-full bg-gradient-to-tr from-sage-light via-sand-light to-dusty-light opacity-50 blur-3xl"
-                aria-hidden="true"
-              />
-              <HeroDevice preview={preview} />
-            </div>
-          )}
+          <div className="relative flex items-center justify-center lg:col-span-6">
+            <HeroOrbit
+              imageSrc="/images/profile.jpg"
+              imageAlt="Portrait of the developer"
+              imageWidth={1143}
+              imageHeight={928}
+            />
+          </div>
         </div>
       </Container>
     </section>

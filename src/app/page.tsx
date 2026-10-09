@@ -20,8 +20,8 @@ export default function HomePage() {
         <BehindCode />
         <Skills />
         <Experience />
-        <AppLab />
         <FeaturedProjects />
+        <AppLab />
         <ContactSection />
       </PageTransition>
       <Footer />
